@@ -37,4 +37,4 @@ RUN bundle install
 RUN rake db:setup
 
 EXPOSE 3000
-CMD rails s -b 0.0.0.0 > /tmp/higecko_rails_s.log 2> /tmp/higecko_rails_s.error
+CMD rails s -b 0.0.0.0
