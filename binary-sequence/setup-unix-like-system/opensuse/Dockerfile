@@ -1,5 +1,5 @@
 FROM opensuse:42.2
-LABEL version="0.1"
+LABEL version="0.2"
 LABEL maintainer "sergiolindo.empresa@gmail.com"
 
 RUN zypper ref
@@ -12,6 +12,8 @@ WORKDIR /home/github/setup-unix-like-system/
 RUN git fetch --all --tags --prune
 RUN git checkout -b v0.1 tags/v0.1
 RUN bash src/opensuse/install_packages.sh
+RUN mkdir -p /home/user/.config
+RUN source src/opensuse/install_config.sh
 
 WORKDIR /home/user
 CMD ["bash"]
